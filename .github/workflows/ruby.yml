@@ -15,9 +15,9 @@ on:
 jobs:
   generate-checksum:
     if: github.event.label.name == "depfu"
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-      steps:
+    steps:
       - name: install dependencies
         run: sudo gem install bundler
       - uses: actions/checkout@v2
