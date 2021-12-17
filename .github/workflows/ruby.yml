@@ -8,22 +8,21 @@
 name: Ruby
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
+    types:
+      - labeled
 
 jobs:
-  test:
+  generate-checksum:
+    if: github.event.label.name == "depfu"
+      runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: install dependencies
-      run: sudo gem install bundler
-    - uses: actions/checkout@v2
-    - name: Generate the checksum
-      run: |
-        git config --global user.name "Victor Pereira"
-        git config --global user.email "vpereira@suse.com"
-        bash generate_checksum.sh
+      steps:
+      - name: install dependencies
+        run: sudo gem install bundler
+      - uses: actions/checkout@v2
+      - name: Generate the checksum
+        run: |
+          git config --global user.name "Victor Pereira"
+          git config --global user.email "vpereira@suse.com"
+          bash generate_checksum.sh
