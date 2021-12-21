@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     actionpack (6.1.4.1)
       actionview (= 6.1.4.1)
@@ -67,8 +68,8 @@ GEM
       rake (>= 0.13)
       thor (~> 1.0)
     rake (13.0.6)
-    redcarpet (3.5.1)
-    ruby_parser (3.18.1)
+    redcarpet (3.5.0)
+    ruby_parser (3.18.0)
       sexp_processor (~> 4.16)
     sexp_processor (4.16.0)
     temple (0.8.2)
