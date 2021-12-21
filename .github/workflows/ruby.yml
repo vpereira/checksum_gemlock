@@ -14,7 +14,7 @@ on:
 
 jobs:
   generate-checksum:
-    if: github.event.label.name == 'depfu'
+    if: ${{ github.event.label.name == 'depfu' || github.event.label.name == 'dependencies' }}
     runs-on: ubuntu-latest
 
     steps:
